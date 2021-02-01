@@ -1,24 +1,35 @@
+"use strict";
 // 1
-let num = 266219;      
-let str = String(num);
-// 2
-let sum = 1;
-for (let digit of str) {
-  sum = sum * +digit;    //перебрал и всех перемножил = 1296
+const lang = "ru";
+const lang_arr = [''];
+
+
+if (lang === "ru") {
+  console.log('Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс');
+} else if (lang == "en") {
+  console.log('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
+} else {
+  console.log("you switched the wrong way");
 }
-console.log(sum);
-// 3
-sum = sum**3         // 3-й степень 2176782336
-console.log(sum);
-// 4
-console.log(String(sum).slice(0, 2));   // первые два числа 21
 
+switch (lang) {
+  case "ru":
+    console.log('Пн', 'Вт', 'СР', 'Чт', 'Пт', 'Сб', 'Вс');
+    break;
+  case "en":
+    console.log('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun');
+    break;
+  default:
+    console.log("you switched the wrong way");
+    break;
+}
 
+lang_arr['ru'] = ['Пн', 'Вт', 'СР', 'Чт', 'Пт', 'Сб', 'Вс'];
+lang_arr['en'] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+console.log(lang_arr[lang]);
 
+// 2
+const namePerson = "Артём";
 
-
-
-
- 
-
-
+const school = (namePerson === "Артём") ? console.log("директор") :
+  (namePerson === "Максим") ? console.log("преподаватель") : console.log("студент");
